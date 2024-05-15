@@ -10,9 +10,9 @@ interface DoublyLinkedList_Interface
 
     public function insertAfter(string $data, string $query): void;
 
-    public function deleteFirst():void;
-    
-    public function deleteLast():void;
+    public function deleteFirst(): void;
+
+    public function deleteLast(): void;
 
     public function displayForward(): void;
 

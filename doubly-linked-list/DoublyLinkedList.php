@@ -12,7 +12,7 @@ class DoublyLinkedList implements DoublyLinkedList_Interface
     {
         $newNode = new DoublyListNode($data);
         if ($this->firstNode == null) {
-            $this->firstNode = &$newNode; 
+            $this->firstNode = &$newNode;
             $this->lastNode = $newNode;
         } else {
             $currentFirstNode = $this->firstNode;
@@ -45,7 +45,7 @@ class DoublyLinkedList implements DoublyLinkedList_Interface
     {
         if ($this->firstNode) {
             $currNode = $this->firstNode;
-            
+
             while ($currNode != null) {
                 if ($currNode->data === $query) {
                     $newNode = new DoublyListNode($data);
@@ -80,11 +80,10 @@ class DoublyLinkedList implements DoublyLinkedList_Interface
             $this->totalNode--;
         }
     }
-    
+
     public function deleteLast(): void
     {
-        if ($this->lastNode != null) 
-        {
+        if ($this->lastNode != null) {
             $currNode = $this->lastNode;
             if ($currNode->prev == null) {
                 $this->firstNode = null;
@@ -97,7 +96,7 @@ class DoublyLinkedList implements DoublyLinkedList_Interface
             $this->totalNode--;
         }
     }
-    
+
     /**
      * display list from start to end
      */
@@ -130,5 +129,4 @@ class DoublyLinkedList implements DoublyLinkedList_Interface
     {
         return $this->totalNode;
     }
-
 }
