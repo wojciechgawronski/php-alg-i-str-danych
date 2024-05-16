@@ -11,16 +11,20 @@ spl_autoload_register(
 );
 
 try {
-    $stack = new StackArray(5);
-    // echo $stack->top() . PHP_EOL;
-    echo $stack->isEmpty() . PHP_EOL;
-    $stack->push('a');
-    $stack->push('b');
-    $stack->push('c');
-    echo $stack->count() . PHP_EOL;
-    echo $stack->pop() . PHP_EOL;
-    echo $stack->pop() . PHP_EOL;
-    echo $stack->count() . PHP_EOL;
+    $lStack = new StackList();
+
+    PHP_EOL;
+    PHP_EOL;
+    $aStack = new StackArray(5);
+    // echo $aStack->top() . PHP_EOL;
+    echo $aStack->isEmpty() . PHP_EOL;
+    $aStack->push('a');
+    $aStack->push('b');
+    $aStack->push('c');
+    echo $aStack->count() . PHP_EOL;
+    echo $aStack->pop() . PHP_EOL;
+    echo $aStack->pop() . PHP_EOL;
+    echo $aStack->count() . PHP_EOL;
 } catch (Exception $e) {
     echo $e->getMessage();
 }
