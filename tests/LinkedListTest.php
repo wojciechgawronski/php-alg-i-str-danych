@@ -12,8 +12,20 @@ class LinkedListTest extends TestCase
     {
         $list = new LinkedList();
         $list->insert("smith");
-        $this->expectOutputString("smith ");
+        $this->expectOutputString("smith");
         $list->display();
+    }
+
+    public function testRemoveHead()
+    {
+        $list = new LinkedList();
+        $list->insert("one");
+        $list->insert("two");
+        $list->insert("three");
+        $this->assertEquals(3, $list->getSize());
+        $this->assertEquals('one', $list->removeHead());
+        $this->assertEquals(2, $list->getSize());
+        $this->assertEquals('two', $list->removeHead());
     }
 
     public function testDisplay()
@@ -22,7 +34,27 @@ class LinkedListTest extends TestCase
         $list->insert("smith");
         $list->insert("black");
         $list->insert("williams");
-        $this->expectOutputString("smith black williams ");
+        $this->expectOutputString("smith black williams");
         $list->display();
+    }
+
+    public function testGetSize()
+    {
+        $list = new LinkedList();
+        $list->insert("one");
+        $list->insert("two");
+        $list->insert("three");
+        $this->assertEquals(3, $list->getSize());
+    }
+
+    public function testTop()
+    {
+        $list = new LinkedList();
+        $this->assertEquals(null, $list->top());
+        $list->insert("one");
+        $this->assertEquals('one', $list->top());
+        $list->insert("two");
+        $list->insert("three");
+        $this->assertEquals('three', $list->top());
     }
 }

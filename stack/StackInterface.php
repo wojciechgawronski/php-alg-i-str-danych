@@ -6,7 +6,7 @@ interface StackInterface
 
     public function pop(): string;
 
-    public function top(): string;
+    public function top(): ?string;
 
     public function isEmpty(): bool;
 
