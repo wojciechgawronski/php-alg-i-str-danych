@@ -2,11 +2,11 @@
 
 use PHPUnit\Framework\TestCase;
 
-require_once 'doubly-linked-list/DoublyLinkedList_Interface.php';
-require_once 'doubly-linked-list/DoublyListNode.php';
-require_once 'doubly-linked-list/DoublyLinkedList.php';
+require_once 'doublyLinkedList/DoublyLinkedList_Interface.php';
+require_once 'doublyLinkedList/DoublyListNode.php';
+require_once 'doublyLinkedList/DoublyLinkedList.php';
 
-class DoublyLInkedListTest extends TestCase
+class DoublyLinkedListTest extends TestCase
 {
     public function testInsertAtHead()
     {
