@@ -2,7 +2,7 @@
 ```bash
 php -S localhost:8000
 #or
-cd linked-list;
+cd linkedList;
 php -e index.php;
 # tests
 vendor/bin/phpunit tests/LinkedListTest.php

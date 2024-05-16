@@ -1,6 +1,6 @@
 # start
 ```bash
-cd doubly-linked-list;
+cd doubly-linkedList;
 php -e index.php;
 ```
 

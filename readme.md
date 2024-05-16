@@ -2,7 +2,7 @@
 ```bash
 composer install;
 vendor/bin/phpunit tests;
-vendor/bin/phpcs --standard=PSR12 ./linked-list/
+vendor/bin/phpcs --standard=PSR12 ./linkedList/
 ```
 
 ```bash
