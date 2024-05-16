@@ -50,6 +50,23 @@ class DoublyLInkedListTest extends TestCase
         $list->displayForward();
     }
 
+    public function testDelete()
+    {
+        $list = new DoublyLinkedList();
+        $list->insertAtTail("one");
+        $list->insertAtTail("two");
+        $list->insertAtTail("three");
+        $list->delete("three");
+        $list->delete("two");
+        $this->expectOutputString("one");
+        $list->displayForward();
+        $list->insertAtTail("two");
+        $list->insertAtTail("three");
+        // $list->delete("one");
+        $this->expectOutputString("asdf");
+        $list->displayForward();
+    }
+
     public function testInsertAfter()
     {
         $list = new DoublyLinkedList();

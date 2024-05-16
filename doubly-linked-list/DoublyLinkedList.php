@@ -81,6 +81,33 @@ class DoublyLinkedList implements DoublyLinkedList_Interface
         }
     }
 
+    public function delete(string $query)
+    {
+        if ($this->firstNode) {
+            $currNode = $this->firstNode;
+            while ($currNode != null) {
+                if ($currNode->data == $query) {
+                    if ($currNode->prev == null) {
+                        $nextNode = $currNode->next;
+                        $nextNode->prev = null;
+                    }
+                    else if ($currNode->next == null) {
+                        $prevNode = $currNode->prev;
+                        $prevNode->next = null;
+                    } else {
+                        $prevNode = $currNode->prev;
+                        $prevNode->next = $currNode->next;
+                        $next = $currNode->next;
+                        $next->prev = $prevNode;
+                    }
+                    $this->totalNode--;
+                    break;
+                }
+                $currNode = $currNode->next;
+            }
+        }
+    }
+
     public function deleteLast(): void
     {
         if ($this->lastNode != null) {
