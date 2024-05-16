@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  The stack implementation by an array
  */

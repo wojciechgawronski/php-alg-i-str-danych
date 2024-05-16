@@ -95,7 +95,7 @@ class DoublyLinkedListTest extends TestCase
         $this->expectOutputString("");
         $list->displayForward();
         $this->assertEquals(0, $list->getTotalNodes());
-        
+
         $list->insertAtHead("brown");
         $list->insertAtHead("wiliams");
         $list->deleteFirst();
@@ -103,7 +103,7 @@ class DoublyLinkedListTest extends TestCase
         $this->expectOutputString("brown");
         $list->displayForward();
     }
-    
+
     public function testDeleteLast()
     {
         $list = new DoublyLinkedList();
@@ -111,7 +111,7 @@ class DoublyLinkedListTest extends TestCase
         $this->expectOutputString("");
         $list->displayForward();
         $this->assertEquals(0, $list->getTotalNodes());
-        
+
         $list->insertAtHead("brown");
         $list->insertAtHead("wiliams");
         $list->deleteLast();
@@ -128,9 +128,8 @@ class DoublyLinkedListTest extends TestCase
         $list->insertAtHead("wiliams");
         $list->insertAtHead("wiliams");
         $this->assertEquals(3, $list->getTotalNodes());
-        
+
         $list->deleteLast();
         $this->assertEquals(2, $list->getTotalNodes());
-
     }
 }

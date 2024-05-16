@@ -90,8 +90,7 @@ class DoublyLinkedList implements DoublyLinkedList_Interface
                     if ($currNode->prev == null) {
                         $nextNode = $currNode->next;
                         $nextNode->prev = null;
-                    }
-                    else if ($currNode->next == null) {
+                    } elseif ($currNode->next == null) {
                         $prevNode = $currNode->prev;
                         $prevNode->next = null;
                     } else {

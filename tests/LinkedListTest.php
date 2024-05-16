@@ -10,15 +10,15 @@ class LinkedListTest extends TestCase
 {
     public function testInsert()
     {
-        $list = new LinkedList;
+        $list = new LinkedList();
         $list->insert("smith");
         $this->expectOutputString("smith ");
         $list->display();
     }
-    
+
     public function testDisplay()
     {
-        $list = new LinkedList;
+        $list = new LinkedList();
         $list->insert("smith");
         $list->insert("black");
         $list->insert("williams");
