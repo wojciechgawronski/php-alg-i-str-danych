@@ -8,6 +8,9 @@ php -S localhost:8000;
 - FIFO: First In Firts Out
 - enqueue: zakolejkowanie
 - dequeue: wykolejkowanie
+- peek
+- getSize
+- isEmpty
 
 # tests
 ```bash

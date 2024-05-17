@@ -5,7 +5,7 @@ declare(strict_types=1);
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-php_sapi_name() === 'cli' ? define('EOL', PHP_EOL) : define('EOL', "<br>");
+if (php_sapi_name() === 'cli') define('EOL', PHP_EOL); else define('EOL', "<br>");
 
 
 $namesQueue = new SplQueue();

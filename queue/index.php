@@ -12,7 +12,21 @@ spl_autoload_register(
     }
 );
 
+if (php_sapi_name() === 'cli') define('EOL', PHP_EOL); else define('EOL', "<br>");
+
 try {
+    $pql = new PriorityQueueList();
+    $pql->enqueue('one', 10);
+    $pql->enqueue('two', 10);
+    $pql->enqueue('one');
+    $pql->enqueue('two');
+    $pql->enqueue('one', 1);
+    $pql->enqueue('two', 1);
+    $pql->display();
+    echo EOL;
+
+
+
     $q = new QueueArray();
     echo "peek: " . $q->peek() . PHP_EOL;
     echo $q->isEmpty();
