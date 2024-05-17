@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 error_reporting(E_ALL);
@@ -12,7 +13,11 @@ spl_autoload_register(
     }
 );
 
-if (php_sapi_name() === 'cli') define('EOL', PHP_EOL); else define('EOL', "<br>");
+if (php_sapi_name() === 'cli') {
+    define('EOL', PHP_EOL);
+} else {
+    define('EOL', "<br>");
+}
 
 try {
     $pql = new PriorityQueueList();
@@ -31,18 +36,18 @@ try {
     echo "peek: " . $q->peek() . PHP_EOL;
     echo $q->isEmpty();
     echo PHP_EOL;
-    
+
     $q->enqueue('one');
-    echo $q->isEmpty() ? 'true' : 'false'. PHP_EOL;
-    echo "peek: ". $q->peek() . PHP_EOL;
+    echo $q->isEmpty() ? 'true' : 'false' . PHP_EOL;
+    echo "peek: " . $q->peek() . PHP_EOL;
     $q->enqueue('two');
     $q->enqueue('three');
-    echo "peek: ". $q->peek() . PHP_EOL;
+    echo "peek: " . $q->peek() . PHP_EOL;
 
     echo $q->dequeue() . PHP_EOL;
     echo $q->dequeue() . PHP_EOL;
     echo $q->dequeue() . PHP_EOL;
     echo $q->dequeue() . PHP_EOL;
-} catch(Exception $e) {
+} catch (Exception $e) {
     $e->getMessage();
 }

@@ -66,4 +66,3 @@ class PriorityQueueList implements PriorityQueueInterface
         return $this->totalNode;
     }
 }
-    

@@ -46,5 +46,4 @@ class QueueArray implements QueueInterface
     {
         return count($this->queue);
     }
-
 }
