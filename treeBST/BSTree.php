@@ -16,12 +16,12 @@ class BSTree // implements BSTTreeInterface
        return $this->root === null;
     }
 
-    public function insert(int $data) 
-    {
+    public function insert(int $data): BSTNode {
         if ($this->isEmpty()) {
             $this->root = new BSTNode($data);
             return $this->root;
         }
+
         $currNode = $this->root;
         while ($currNode) {
             if ($data > $currNode->data) {
@@ -29,21 +29,25 @@ class BSTree // implements BSTTreeInterface
                     $currNode = $currNode->right;
                 } else {
                     $currNode->right = new BSTNode($data);
-                    $currNode = $currNode->right;
-                    break;
+                    $currNode->right->parent = $currNode;
+                    return $currNode->right;
                 }
-            } else if( $data < $currNode->data) {
+            } else if ($data < $currNode->data) {
                 if ($currNode->left) {
                     $currNode = $currNode->left;
                 } else {
                     $currNode->left = new BSTNode($data);
-                    $currNode = $currNode->left;
-                    break;
+                    $currNode->left->parent = $currNode;
+                    return $currNode->left;
                 }
             } else {
+                // Data already exists in the tree, return the existing node
                 return $currNode;
             }
         }
+
+        // This line should never be reached
+        // return $currNode;
     }
 
     public function traverse(BSTNode $node): void
@@ -57,6 +61,13 @@ class BSTree // implements BSTTreeInterface
                 $this->traverse($node->right);
             }
         }
+    }
+
+    public function remove(int $data)
+    {
+        $node = $this->search($data);
+        if ($node) 
+            $node->delete();
     }
 
     public function min(): ?int

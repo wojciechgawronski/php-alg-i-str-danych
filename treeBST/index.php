@@ -47,6 +47,7 @@ $tree->insert(8);
 $tree->insert(15);
 $tree->insert(13);
 $tree->insert(36);
+$tree->remove(15);
 echo 'traverse: '. EOL;
 $tree->traverse($tree->root);
 echo EOL;
