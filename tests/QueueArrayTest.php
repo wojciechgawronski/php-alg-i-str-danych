@@ -39,6 +39,8 @@ class QueueArrayTest extends TestCase
     public function testPeek()
     {
         $q = new QueueArray();
+        $this->expectException(UnderflowException::class);
+        $this->expectExceptionMessage('Queue is empty');
         $q->peek();
         $q->enqueue('one');
         $q->enqueue('one');
