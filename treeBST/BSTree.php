@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-class BSTree // implements BSTTreeInterface
+class BSTree implements BSTreeInterface
 {
     public $root = null;
 
@@ -16,7 +16,7 @@ class BSTree // implements BSTTreeInterface
        return $this->root === null;
     }
 
-    public function insert(int $data): BSTNode {
+    public function insert(int|float $data): BSTNode {
         if ($this->isEmpty()) {
             $this->root = new BSTNode($data);
             return $this->root;
@@ -47,63 +47,72 @@ class BSTree // implements BSTTreeInterface
         }
 
         // This line should never be reached
-        // return $currNode;
+        return $currNode;
     }
 
-    public function traverse(BSTNode $node): void
+    public function traverse(BSTNode $node): string
     {
-        if ($node) {
-            if ($node->left) {
-                $this->traverse($node->left);
-            }
-            echo $node->data. " ";
-            if ($node->right) {
-                $this->traverse($node->right);
-            }
+        if ($node === null) {
+            $node = $this->root;
+        }
+
+        $result = [];
+        $this->inOrderTraversal($node, $result);
+
+        return implode(' ', $result);
+    }
+
+
+    private function inOrderTraversal(?BSTNode $node, array &$result): void
+    {
+        if ($node !== null) {
+            $this->inOrderTraversal($node->left, $result);
+            $result[] = $node->data;
+            $this->inOrderTraversal($node->right, $result);
         }
     }
 
-    public function remove(int $data)
+    public function remove(int|float $data): void
     {
         $node = $this->search($data);
         if ($node) 
             $node->delete();
     }
 
-    public function min(): ?int
+    public function min(): int|float|null
     {
         if ($this->isEmpty()) {
             return null; // or throw an exception
         }
 
         $currentNode = $this->root;
-        $operations = 0;
+        $operations = 1;
 
         while ($currentNode->left !== null) {
             $currentNode = $currentNode->left;
             $operations++;
         }
-        echo "min(): operations: $operations".EOL;
+        // echo "min(): operations: $operations".EOL;
 
         return $currentNode->data;
     }
 
-    public function max(): ?int
+    public function max(): int|float|null
     {
         if ($this->isEmpty()) {
             return null; // or throw an exception
         }
 
         $currentNode = $this->root;
-        $operations = 0;
+        $operations = 1;
         while ($currentNode->right !== null) {
             $currentNode = $currentNode->right;
         }
-        echo "max(): operations: $operations".EOL;
+        // echo "max(): operations: $operations".EOL;
         return $currentNode->data;
     }
 
-    public function search(int $data): ?BSTNode
+    public function search(int|float $data): ?BSTNode
     {
         if ($this->isEmpty())
             return null;

@@ -2,17 +2,17 @@
 
 interface BSTreeInterface
 {
-    public function insert(int|float $value): void;
+    public function insert(int|float $data): BSTNode;
 
-    public function delete(int|float $value): void;
+    public function remove(int|float $value): void;
 
-    public function search(int|float $value): null|int|float;
+    public function search(int|float $value): ?BSTNode;
 
-    public function inOrderTraversal();
+    public function traverse(BSTNode $node);
 
-    public function findMax(): int|float|null;
+    public function max(): int|float|null;
 
-    public function findMin(): int|float|null;
+    public function min(): int|float|null;
 
     public function isEmpty(): bool;
 }

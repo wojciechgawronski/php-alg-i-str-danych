@@ -49,7 +49,7 @@ $tree->insert(13);
 $tree->insert(36);
 $tree->remove(15);
 echo 'traverse: '. EOL;
-$tree->traverse($tree->root);
+echo $tree->traverse($tree->root);
 echo EOL;
 $search = 36;
 echo $tree->search($search) ? "znaleziono $search" : "nieznaleziono $search";
