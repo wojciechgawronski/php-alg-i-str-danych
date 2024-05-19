@@ -19,10 +19,16 @@ class BSTNode
     {
         $node = $this;
         if (!$node->left && !$node->right) {
-            if ($node->parent->left === $node)
-                $node->parent->left = null;
-            else
-                $node->parent->right = null;
+            if ($node->parent->left === $node){
+                if ($node->parent->left) {
+                    $node->parent->left = null;
+                }
+            }
+            else {
+                if ($node->parent->right) {
+                    $node->parent->right = null;
+                }
+            }
         } else if ($node->left && $node->right)
         {
             $successor = $node->successor();
