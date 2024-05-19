@@ -1,7 +1,9 @@
 <?php
+if (is_file('../linkedList/I_LinkedList.php'))
+    include_once '../linkedList/I_LinkedList.php';
 
-include_once '../linkedList/I_LinkedList.php';
-include_once '../linkedList/LinkedList.php';
+if (is_file('../linkedList/LinkedList.php'))
+    include_once '../linkedList/LinkedList.php';
 
 class StackList implements StackInterface
 {

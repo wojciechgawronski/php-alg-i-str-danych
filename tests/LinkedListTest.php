@@ -2,9 +2,9 @@
 
 use PHPUnit\Framework\TestCase;
 
-require_once 'linkedList/I_LinkedList.php';
-require_once 'linkedList/LinkedList.php';
-require_once 'linkedList/ListNode.php';
+include_once 'linkedList/I_LinkedList.php';
+include_once 'linkedList/LinkedList.php';
+include_once 'linkedList/ListNode.php';
 
 class LinkedListTest extends TestCase
 {
