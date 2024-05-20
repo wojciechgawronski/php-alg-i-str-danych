@@ -10,12 +10,12 @@ class SelectionSort
         for ($i = 0; $i < $len; $i++) {
             $min = $i;
             $przejsc++;
-            for ($j=$i+1; $j<$len; $j++) {
+            for ($j = $i + 1; $j < $len; $j++) {
                 if ($arr[$j] < $arr[$min]) {
                     $min = $j;
                 }
             }
-            
+
             if ($min != $i) {
                 $temp = $arr[$i];
                 $arr[$i] = $arr[$min];

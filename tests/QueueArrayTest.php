@@ -35,7 +35,7 @@ class QueueArrayTest extends TestCase
         $q->dequeue();
         $this->assertEquals(0, $q->getSize());
     }
-    
+
     public function testPeek()
     {
         $q = new QueueArray();
@@ -47,7 +47,7 @@ class QueueArrayTest extends TestCase
         $q->peek();
         $this->assertEquals(2, $q->getSize());
     }
-    
+
     public function testGetSize()
     {
         $q = new QueueArray();
@@ -69,4 +69,3 @@ class QueueArrayTest extends TestCase
         $this->assertEquals(false, $q->isEmpty());
     }
 }
-

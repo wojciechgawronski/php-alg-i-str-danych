@@ -1,6 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+
 require_once 'selectionSort/SelectionSort.php';
 
 if (!defined('EOL')) {

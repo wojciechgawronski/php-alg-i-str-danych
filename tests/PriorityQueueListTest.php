@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
@@ -16,7 +17,7 @@ class PriorityQueueListTest extends TestCase
         $q->enqueue('two');
         $this->assertEquals(2, $q->getSize());
         $this->assertEquals('one', $q->peek());
-        $q->enqueue('two',1);
+        $q->enqueue('two', 1);
         $this->assertEquals('two', $q->peek());
     }
 
@@ -31,10 +32,8 @@ class PriorityQueueListTest extends TestCase
         $this->assertEquals('one', $q->peek());
         $this->assertEquals('one', $q->dequeue());
         $this->assertEquals('two', $q->dequeue());
-        $q->enqueue('two',1);
+        $q->enqueue('two', 1);
         $this->assertEquals('two', $q->dequeue());
-
-
     }
 
     public function testPeek()
@@ -45,7 +44,7 @@ class PriorityQueueListTest extends TestCase
         $q->peek();
         $q->enqueue(2, 10);
         $this->assertEquals(2, $q->peek());
-        $q->enqueue(1,11);
+        $q->enqueue(1, 11);
         $q->enqueue(3);
         $this->assertEquals(1, $q->peek());
     }

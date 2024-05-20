@@ -15,14 +15,16 @@ if (php_sapi_name() === 'cli') {
 
 class BSTreeTest extends TestCase
 {
-    public function testInsert(){
+    public function testInsert()
+    {
         $tree = new BSTree(2);
         $tree->insert(12);
         $this->assertEquals(false, $tree->isEmpty());
         $this->assertEquals('2 12', $tree->traverse($tree->root));
     }
 
-    public function testRemove(){
+    public function testRemove()
+    {
         $tree = new BSTree(10);
         $tree->insert(12);
         $tree->insert(6);
@@ -34,7 +36,8 @@ class BSTreeTest extends TestCase
         $this->assertEquals('6 10', $tree->traverse($tree->root));
     }
 
-    public function testSearch() {
+    public function testSearch()
+    {
         $tree = new BSTree(10);
         $this->assertEquals(null, $tree->search(11));
         $tree->insert(12);
@@ -44,7 +47,8 @@ class BSTreeTest extends TestCase
         $this->assertEquals(6, $search->data);
     }
 
-    public function testTraverse() {
+    public function testTraverse()
+    {
         $tree = new BSTree(10);
         $tree->insert(12);
         $tree->insert(6);
@@ -57,7 +61,8 @@ class BSTreeTest extends TestCase
         $this->assertEquals('3 6 8 10 12 13 36', $tree->traverse($tree->root));
     }
 
-    public function testMax() {
+    public function testMax()
+    {
         $tree = new BSTree(10);
         $this->assertEquals(10, $tree->max());
         $tree->insert(12);
@@ -72,7 +77,8 @@ class BSTreeTest extends TestCase
         $this->assertEquals(36, $tree->max());
     }
 
-    public function testMin() {
+    public function testMin()
+    {
         $tree = new BSTree(10);
         $this->assertEquals(10, $tree->min());
         $tree->insert(12);
@@ -84,7 +90,8 @@ class BSTreeTest extends TestCase
         $this->assertEquals(3, $tree->min());
     }
 
-    public function testIsEmpty() {
+    public function testIsEmpty()
+    {
         $tree = new BSTree(2);
         $this->assertEquals(false, $tree->isEmpty());
         $tree->remove(2);
